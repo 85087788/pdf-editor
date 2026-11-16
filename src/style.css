@@ -1,0 +1,66 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;color:#17212f;background:#f2f4f8}
+button,input{font:inherit}
+button{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid #dce2ea;background:#fff;color:#263448;border-radius:8px;padding:9px 12px;cursor:pointer;transition:background .12s,border-color .12s}
+button:hover:not(:disabled){background:#f0f4fb}
+button:focus-visible{outline:2px solid #295bea;outline-offset:2px}
+button:disabled{opacity:.4;cursor:not-allowed}
+.primary{background:#295bea;color:#fff;border-color:#295bea}
+.primary:hover:not(:disabled){background:#1f4ac5}
+.toggled{background:#eef3ff;border-color:#295bea;color:#1f4ac5}
+.app{height:100vh;height:100dvh;display:flex;flex-direction:column}
+header{height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 23px;background:#fff;border-bottom:1px solid #e1e5ec;gap:12px}
+.brand,.headerActions{display:flex;align-items:center;gap:12px}
+.brandmark{background:#295bea;color:#fff;font-size:13px;font-weight:800;padding:10px 7px;border-radius:8px}
+.brand strong{font-size:17px}
+.brand small{color:#8190a3;font-size:12px}
+.workspace{display:flex;flex:1;min-height:0}
+aside{width:205px;background:#fff;border-right:1px solid #e1e5ec;display:flex;flex-direction:column;padding:15px;gap:12px}
+aside h3{font-size:14px;margin:0;display:flex;justify-content:space-between}
+aside h3 span{color:#8895a5}
+.pageList{flex:1;overflow:auto;display:flex;flex-direction:column;gap:8px;padding:2px}
+.pageItem{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;padding:8px}
+.pageItem.selected{border-color:#295bea;background:#eef3ff;box-shadow:0 0 0 1px #295bea}
+.thumb{width:110px;height:auto;max-height:160px;object-fit:contain;background:#fff;box-shadow:0 1px 4px #25344933;display:block}
+.sideActions{display:flex;flex-direction:column;gap:6px}
+.sideActions button{font-size:12px;justify-content:flex-start}
+main{flex:1;display:flex;flex-direction:column;min-width:0;min-height:0}
+.toolbar{display:flex;align-items:center;gap:8px;padding:10px 16px;background:#fff;border-bottom:1px solid #e1e5ec;overflow-x:auto}
+.toolbar button{white-space:nowrap;font-size:12px}
+.sep{height:24px;border-left:1px solid #ddd}
+.colorLabel,.fontLabel{font-size:12px;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.colorLabel input{width:30px;height:29px;padding:0;border:0;background:none;cursor:pointer}
+.fontLabel input{width:56px;padding:5px;border:1px solid #dce2ea;border-radius:6px}
+.documentArea{flex:1;min-height:0;overflow:auto;display:flex;align-items:flex-start;padding:24px;position:relative}
+.canvasFrame{position:relative;flex:none;margin:0 auto;box-shadow:0 5px 25px #25344922;background:#fff;line-height:0}
+.pdfLayer{position:absolute;inset:0;width:100%;height:100%}
+.annotLayer{position:absolute;inset:0}
+.dropHint{position:absolute;inset:12px;border:3px dashed #295bea;border-radius:16px;background:#eef3ffd9;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;color:#1f4ac5;pointer-events:none;z-index:5}
+.empty{margin:auto;text-align:center;max-width:420px;display:flex;align-items:center;flex-direction:column;gap:14px}
+.emptyIcon{background:#e8efff;color:#295bea;padding:28px 20px;border-radius:20px;font-size:25px;font-weight:900}
+.empty h1{margin:0;font-size:27px}
+.empty p{line-height:1.6;color:#65758b;margin:0}
+.empty small{color:#8994a5}
+footer{background:#fff;border-top:1px solid #e1e5ec;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 16px;font-size:12px}
+.status{color:#68788c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:50%}
+.pager,.zoom{display:flex;align-items:center;gap:8px}
+.pager button,.zoom button{padding:5px}
+.zoom span{min-width:38px;text-align:center}
+@media(max-width:760px){
+  header{padding:10px;height:auto;flex-wrap:wrap}
+  .brand small{display:none}
+  .headerActions{gap:5px}
+  .headerActions button{font-size:11px;padding:7px}
+  .workspace{flex-direction:column}
+  aside{width:100%;padding:7px;gap:6px;border-right:0;border-bottom:1px solid #e1e5ec}
+  aside h3{display:none}
+  .pageList{flex-direction:row;flex:none;height:118px}
+  .pageItem{min-width:72px;padding:4px}
+  .thumb{width:56px;max-height:80px}
+  .sideActions{flex-direction:row;overflow-x:auto}
+  .sideActions button{white-space:nowrap;font-size:11px;padding:6px 8px}
+  .documentArea{padding:12px}
+  .toolbar{padding:7px}
+  .status{max-width:35%}
+}
+.emptyActions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
